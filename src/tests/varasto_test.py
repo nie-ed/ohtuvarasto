@@ -15,15 +15,17 @@ class TestVarasto(unittest.TestCase):
 
     def test_uudella_varastolla_tilavuus_0_jos_ei_anneta(self):
         varasto = Varasto(-1)
+        #kun asetetaan negatiivinen tilavuus, pitäisi tulla 0 tilavuudeksi
         self.assertEqual(varasto.tilavuus, 0.0)
 
     def test_uudella_varastolla_oikea_alku_saldo(self):
         varasto = Varasto(1, -1)
+        #negatiivisen saldon lisäys ei pitäisi muuttaa saldoa
         self.assertEqual(varasto.saldo, 0.0)
 
     def test_lisays_lisaa_saldoa(self):
         self.varasto.lisaa_varastoon(8)
-
+        
         self.assertAlmostEqual(self.varasto.saldo, 8)
 
     def test_lisays_lisaa_pienentaa_vapaata_tilaa(self):
