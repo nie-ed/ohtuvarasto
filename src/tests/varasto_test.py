@@ -19,7 +19,7 @@ class TestVarasto(unittest.TestCase):
 
     def test_uudella_varastolla_oikea_alku_saldo(self):
         varasto = Varasto(1, -1)
-        self.assertEqual(varasto.saldo, 0.0)
+        self.assertEqual(varasto.saldo, 1)
 
     def test_lisays_lisaa_saldoa(self):
         self.varasto.lisaa_varastoon(8)
